@@ -1,0 +1,31 @@
+{
+  "name": "fad",
+  "version": "0.0.1",
+  "description": "Frontend automatic deploy tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/xsbear/fad.git"
+  },
+  "dependencies": {
+    "commander": "~2.2.0",
+    "scp2": "~0.1.4",
+    "glob": "3.2.9"
+  },
+  "bin": {
+    "fad": "bin/fad"
+  },
+  "keywords": [
+    "frontend",
+    "deploy"
+  ],
+  "author": "xsbear",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/xsbear/fad/issues"
+  },
+  "homepage": "https://github.com/xsbear/fad"
+}
