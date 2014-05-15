@@ -13,7 +13,8 @@
   "dependencies": {
     "commander": "~2.2.0",
     "scp2": "~0.1.4",
-    "glob": "3.2.9"
+    "glob": "3.2.9",
+    "colors": "~0.6.2"
   },
   "bin": {
     "fad": "bin/fad"
