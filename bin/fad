@@ -1,43 +1,35 @@
 #!/usr/bin/env node
 
-var deploy = require('../lib/deploy')
+var init = require('../lib/init')
 var dist = require('../lib/dist')
+var deploy = require('../lib/deploy')
 
 var commander = require('commander');
 commander
   .version('0.0.1')
   .option('-C, --chdir <path>', 'change the working directory')
   .option('-c, --config <path>', 'set config path. defaults to ./deploy.conf')
-  .option('-T, --no-tests', 'ignore test hook')
 
 commander
-  .command('deploy [env]')
-  .description('run deploy commands for all envs')
-  .option("-s, --deploy_mode [mode]", "Which deploy mode to use")
-  .action(function(env, options){
-    // console.log(env)
-    var mode = options.deploy_mode || "normal";
-    env = env || 'all';
-    console.log(deploy)
-    deploy.upload(env)
-
-
-    // console.log('deploy for %s env(s) with %s mode', env, mode);
-  });
+  .command('init')
+  .description('run init commands, create fad config file into project')
+  .action(function(options){
+    init()
+  })
 
 commander
   .command('dist')
-  .description('run dist commands')
+  .description('run dist commands, distribute static resources')
   .action(function(options){
-    // console.log(env)
-    var mode = options.deploy_mode || "normal";
+    dist()
 
-    dist([
-      'templates/base2.html',
-      'templates/manage_adgroups.html',
-      // 'static/page/*.js'
-    ])
+  })
 
+commander
+  .command('deploy')
+  .description('run deploy commands')
+  .action(function(options){
+    deploy.sync(options)
   });
 
 commander.parse(process.argv);

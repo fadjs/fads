@@ -1,7 +1,7 @@
 {
   "name": "fad",
   "version": "0.0.1",
-  "description": "Frontend automatic deploy tools",
+  "description": "Frontend automatic distribute and deploy tools.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
