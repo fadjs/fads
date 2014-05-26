@@ -22,14 +22,14 @@ commander
   .description('run dist commands, distribute static resources')
   .action(function(options){
     dist()
-
   })
 
 commander
   .command('deploy')
   .description('run deploy commands')
+  .option("-s, --sync", "Force sync, used for clean remote directory")
   .action(function(options){
-    deploy.sync(options)
+    deploy.deploy(options)
   });
 
 commander.parse(process.argv);
