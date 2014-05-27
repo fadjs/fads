@@ -1,18 +1,17 @@
 {
-  "name": "fad",
+  "name": "fads",
   "version": "0.0.1",
-  "description": "Frontend automatic distribute and deploy tools.",
+  "description": "Frontend automatic distribute and deploy solution.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/xsbear/fad.git"
+    "url": "https://github.com/fadjs/fads"
   },
   "dependencies": {
     "commander": "~2.2.0",
-    "scp2": "~0.1.4",
     "glob": "3.2.9",
     "colors": "~0.6.2"
   },
@@ -21,12 +20,16 @@
   },
   "keywords": [
     "frontend",
+    "distribute",
     "deploy"
   ],
-  "author": "xsbear",
-  "license": "BSD",
-  "bugs": {
-    "url": "https://github.com/xsbear/fad/issues"
+  "author": {
+    "name": "xsbear",
+    "email": "xsbear@gmail.com"
   },
-  "homepage": "https://github.com/xsbear/fad"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fadjs/fads/issues"
+  },
+  "homepage": "https://github.com/fadjs/fads"
 }

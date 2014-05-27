@@ -7,8 +7,8 @@ var deploy = require('../lib/deploy')
 var commander = require('commander');
 commander
   .version('0.0.1')
-  .option('-C, --chdir <path>', 'change the working directory')
-  .option('-c, --config <path>', 'set config path. defaults to ./deploy.conf')
+  // .option('-C, --chdir <path>', 'change the working directory')
+  // .option('-c, --config <path>', 'set config path. defaults to ./fad.conf')
 
 commander
   .command('init')
@@ -30,6 +30,14 @@ commander
   .option("-s, --sync", "Force sync, used for clean remote directory")
   .action(function(options){
     deploy.deploy(options)
+  });
+
+commander
+  .command('upload <local_path>')
+  .description('run upload commands')
+  .option("-d, --dest_dir <dir>", "Remote destination dir, upload local dir to remote dir with local_path param")
+  .action(function(local_path, options){
+    deploy.upload(local_path, options)
   });
 
 commander.parse(process.argv);
