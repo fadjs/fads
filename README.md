@@ -11,7 +11,13 @@ $ npm install -g fads
 
 ## Usage
 
-- Coming soon...
+#### fad init
+
+#### fad dist
+
+#### fad deploy
+
+#### fad upload
 
 ## Report a issue
 
