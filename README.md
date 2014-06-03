@@ -19,6 +19,10 @@ $ npm install -g fads
 
 #### fad upload
 
+#### fad test
+
+#### fad grunt
+
 ## Report a issue
 
 * [All issues](https://github.com/fadjs/fad/issues)
