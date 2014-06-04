@@ -21,19 +21,25 @@ commander
 commander
   .command('dist')
   .description('run dist commands, distribute static resources')
-  .option("-a, --all", "Run all distribute process, build, dist and deploy")
-  .option("-c, --clean", "Run grunt clean task after all distribute process")
+  .option("-A, --all", "Run all distribute process, build(grunt), dist, deploy and clean(grunt)")
+  .option("-b, --build", "Run grunt build task before dist")
+  .option("-d, --deploy", "Run deploy after dist")
   .action(function(options) {
-    if (options.all) {
+    if (options.build || options.all) {
       grunt.execute('build', function() {
         dist();
-        deploy.deploy(options);
-        if (options.clean) {
+        if(options.deploy || options.all){
+          deploy.deploy(options);
+        }
+        if(options.all) {
           grunt.execute('clean')
         }
       })
     } else {
       dist();
+      if(options.deploy){
+        deploy.deploy(options);
+      }
     }
   })
 
