@@ -61,7 +61,7 @@ commander
 
 commander
   .command('test <env>')
-  .description('run test commands')
+  .description('run test commands, switch static environment fot testing')
   .action(function(env) {
     grunt.execute('grunt_test_' + env)
   });
@@ -76,3 +76,7 @@ commander
 
 
 commander.parse(process.argv);
+
+if (!commander.args.length) {
+  commander.help();
+}
