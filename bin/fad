@@ -23,6 +23,7 @@ commander
   .description('run dist commands, distribute static resources')
   .option("-A, --all", "Run all distribute process, build(grunt), dist, deploy and clean(grunt)")
   .option("-b, --build", "Run grunt build task before dist")
+  .option("-c, --clean", "Run grunt clean task after dist")
   .option("-d, --deploy", "Run deploy after dist")
   .action(function(options) {
     if (options.build || options.all) {
@@ -31,7 +32,7 @@ commander
         if(options.deploy || options.all){
           deploy.deploy(options);
         }
-        if(options.all) {
+        if(options.all || options.clean) {
           grunt.execute('clean')
         }
       })
