@@ -1,6 +1,6 @@
 {
   "name": "fads",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Frontend automatic distribute and deploy solution.",
   "main": "index.js",
   "scripts": {
